@@ -7,4 +7,10 @@ describe "Overlapping areas" do
     rectangles.size.should == 1
   end
   
+  it "should add two rectangles" do
+    add_rectangle([1,2], [2,3])
+    add_rectangle([1,2], [2,3])
+    rectangles.size.should == 2
+  end
+  
 end
