@@ -1,17 +1,17 @@
 @rectangles_list = []
 
 def normalize(point1, point2)
-  if(point1[0] > point2[0])
-    x = point2[0]
-    point2[0] = point1[0]
-    point1[0] = x
-  end
-  if(point1[1] > point2[1])
-    x = point2[1]
-    point2[1] = point1[1]
-    point1[1] = x
-  end
+  swap_when_position_higher(0, point1, point2)
+  swap_when_position_higher(1, point1, point2)
   [point1,point2]
+end
+
+def swap_when_position_higher(position, point1, point2)
+  if(point1[position] > point2[position])
+    x = point2[position]
+    point2[position] = point1[position]
+    point1[position] = x
+  end
 end
 
 def rectangles
