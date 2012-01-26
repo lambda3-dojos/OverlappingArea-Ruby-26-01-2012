@@ -13,4 +13,11 @@ describe "Overlapping areas" do
     rectangles.size.should == 2
   end
   
+  it "should calc intersection rectangles between two equals" do
+    add_rectangle([1,2], [2,3])
+    add_rectangle([1,2], [2,3])
+    
+     calc_intersection.should == [[1,2], [2,3]] 
+  end
+  
 end
