@@ -17,7 +17,15 @@ describe "Overlapping areas" do
     add_rectangle([1,2], [2,3])
     add_rectangle([1,2], [2,3])
     
-     calc_intersection.should == [[1,2], [2,3]] 
+    calc_intersection.should == [[1,2], [2,3]] 
   end
+
+  it "should calc intersection rectangles between two non intersection" do
+    add_rectangle([1,2], [2,3])
+    add_rectangle([4,6], [7,8])
+
+    calc_intersection.should be_empty
+  end    
+ 
   
 end
