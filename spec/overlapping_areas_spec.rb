@@ -8,6 +8,14 @@ describe "Overlapping areas" do
       normalize([1,1], [1,1]).should == [[1,1], [1,1]]
     end
     
+    it "should return the combine to get a normalize one" do
+      normalize([2,1], [1,2]).should == [[1,1], [2,2]]
+    end
+    
+    it "should return the reverted order when is in not normalized" do
+      normalize([3, 3], [1,1]).should == [[1,1], [3, 3]]
+    end
+    
   end
 
   it "should add a rectangle" do

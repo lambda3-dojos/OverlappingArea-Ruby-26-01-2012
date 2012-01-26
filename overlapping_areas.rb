@@ -1,7 +1,17 @@
 @rectangles_list = []
 
-def normalize(point1, point2) 
-  [[1,1], [1,1]]
+def normalize(point1, point2)
+  if(point1[0] > point2[0])
+    x = point2[0]
+    point2[0] = point1[0]
+    point1[0] = x
+  end
+  if(point1[1] > point2[1])
+    x = point2[1]
+    point2[1] = point1[1]
+    point1[1] = x
+  end
+  [point1,point2]
 end
 
 def rectangles
@@ -9,7 +19,6 @@ def rectangles
 end
 
 def add_rectangle(point1, point2)
-  
   @rectangles_list = [] if @rectangles_list.nil?
   @rectangles_list << [point1, point2]
 end
