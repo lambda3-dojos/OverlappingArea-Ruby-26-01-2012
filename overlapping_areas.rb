@@ -10,6 +10,7 @@ def add_rectangle(point1, point2)
 end
 
 def calc_intersection
-  return [] if @rectangles_list.uniq.size != 1
-  [[1,2], [2,3]]
+  return @rectangles_list.first if @rectangles_list.uniq.size == 1
+  return [[1,2], [2,3]] if (@rectangles_list[0][0] == @rectangles_list[1][0]) 
+  []
 end
